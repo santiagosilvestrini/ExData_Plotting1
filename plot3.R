@@ -36,35 +36,27 @@ dev.copy(png, file = "plot3.png", width = 480, height = 480)
 
 with(
     epcData
-    , plot(
-        Time
-        , Sub_metering_1
-        , xlab = ""
-        , ylab = "Energy sub metering"
-        , cex.axis = 0.7 # relative size of axis text
-        , cex.lab = 0.7  # relateive size of axis labels
-        , type = "l" # line
-    )
-)
-
-with(
-    epcData
-    , points( 
-        Time
-        , Sub_metering_2
-        , type = "l"
-        , col = "red"
-    )
-)
-
-with(
-    epcData
-    , points( 
-        Time
-        , Sub_metering_3
-        , type = "l"
-        , col = "blue"
-    )
+    , { 
+        plot(
+            Time
+            , Sub_metering_1
+            , xlab = ""
+            , ylab = "Energy sub metering"
+            , cex.axis = 0.7 # relative size of axis text
+            , cex.lab = 0.7  # relateive size of axis labels
+            , type = "l" # line
+        )
+        lines( 
+            Time
+            , Sub_metering_2
+            , col = "red"
+        )
+        lines( 
+            Time
+            , Sub_metering_3
+            , col = "blue"
+        )
+    }
 )
 
 legend(
