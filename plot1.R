@@ -34,6 +34,8 @@ str(epcData)
 ## Y Axis: Frequency
 ## X Axis: Global Active Power (Global_active_power)
 
+dev.copy(png, file = "plot1.png", width = 480, height = 480) # prepare graphic device
+
 hist(
         epcData$Global_active_power
         , col = "red"
@@ -46,5 +48,4 @@ hist(
         #,family = "sans"
 )
 
-dev.copy(png, file = "plot1.png", width = 480, height = 480)
-dev.off()
+dev.off() # shutdown graphic device

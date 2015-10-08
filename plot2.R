@@ -31,6 +31,8 @@ str(epcData)
 ## Type: Time Series
 ## Y Axis: Global Active Power (Global_active_power)
 ## X Axis: Time (Thu-Sat)
+dev.copy(png, file = "plot2.png", width = 480, height = 480)
+
 with(
     epcData
     , plot(
@@ -44,5 +46,4 @@ with(
     )
 )
 
-dev.copy(png, file = "plot2.png", width = 480, height = 480)
 dev.off()
